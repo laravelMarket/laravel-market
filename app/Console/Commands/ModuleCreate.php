@@ -49,9 +49,9 @@ class ModuleCreate extends Command
 
             $directories = listFolderFiles(('app/Modules'));
             if(in_array('app/Modules/'.$controller,$directories)){
-                return $this->error($controller. ' Modülü zaten var.');
+                return $this->error($controller. ' Module is exists.');
             }
-            $module_folder = $this->choice('Frontend or  Admin ?',['Frontend','Admin','User'],0);
+            $module_folder = $this->choice('Please Choice Modules Zone ?',['Frontend','Admin','User'],0);
 
             $controller = studly_case($controller);
             $root = app_path('Modules/'.$module_folder.'/'.$controller);
@@ -71,11 +71,11 @@ class ModuleCreate extends Command
                     '--resource' => TRUE
                 ]);
 
-                return $this->info('Oldu');
+                return $this->info('Modules Created');
 
             }else{
 
-                return $this->info('DIR YOK!');
+                return $this->info('Folder not exist');
 
             }
 
