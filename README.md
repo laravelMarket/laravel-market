@@ -165,3 +165,10 @@ public function index()
         return view('TestModule::index');
     }
 ```
+#Final Step
+
+
+```sh
+git push -u origin testModule 
+```
+And get pull request
