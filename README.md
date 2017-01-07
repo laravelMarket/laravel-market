@@ -1,2 +1,6 @@
-# laravelMarket
-laravel marketplace multivendor like amazon
+# LaravelMarket
+Laravel Market başlangıç
+### Kurulum
+```sh
+$ git clone https://github.com/puuble/laravelMarket.git
+```
