@@ -51,7 +51,7 @@ class ModuleCreate extends Command
             if(in_array('app/Modules/'.$controller,$directories)){
                 return $this->error($controller. ' Module is exists.');
             }
-            $module_folder = $this->choice('Please Choice Modules Zone ?',['Frontend','Admin','User'],0);
+            $module_folder = $this->choice('Please Choice Module Root ?',['Frontend','Admin','User'],0);
 
             $controller = studly_case($controller);
             $root = app_path('Modules/'.$module_folder.'/'.$controller);

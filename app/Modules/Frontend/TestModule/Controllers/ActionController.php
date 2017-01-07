@@ -2,6 +2,7 @@
 
 namespace App\Modules\Frontend\TestModule\Controllers;
 
+use App\Modules\Frontend\TestModule\Models\TestModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,8 @@ class ActionController extends Controller
     public function index()
     {
         //
-        return 'Hello Laravel Market';
+        TestModel::class;
+        return view('TestModule::index');
     }
 
     /**

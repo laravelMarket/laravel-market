@@ -53,12 +53,13 @@ class RouteController extends Controller
 
 
         if($function == 'index'){
+
             if($request->getMethod() == 'POST'){
                 $function = 'store';
             }elseif($request->getMethod() == 'PUT'){
                 $function = 'update';
             }elseif($request->getMethod() == 'DELETE'){
-                $function = 'remove';
+                $function = 'destroy';
             }
         }
 
@@ -86,15 +87,21 @@ class RouteController extends Controller
 
             $permission = $this->routerAdmin($modules, $controller, $function, $parameters, $request);
 
+        } else {
+
+            if (!in_array($modules, $this->moduleLists_frontend)) {
+                if($request->ajax()){
+                    return response()->json(['notification'=>true,'messages'=>'ERROR:404 NOT FOUND','type'=>'error']);
+                }
+                return view('errors.404');
+            }
+            $permission = $this->routerFrontend($modules, $controller, $function, $parameters, $request);
         }
-
-
 
         if(!$permission){
            if($request->ajax()){
                return response()->json(['notification'=>true,'messages'=>'ERROR:403 We seem to have lost you in the clouds.The page your looking for is forbidden.','type'=>'error']);
            }
-
 
             return view('errors.403');
         }
@@ -133,6 +140,11 @@ class RouteController extends Controller
         return false;
 
 
+    }
+    public function routerFrontend($modules, $controller, $function, $parameters, $request)
+    {
+        $modules = "Frontend\\$modules";
+        return [$modules, $controller, $function, $parameters];
     }
 
 }
