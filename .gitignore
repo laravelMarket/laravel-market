@@ -8,3 +8,4 @@ composer.lock
 .idea
 vendor
 /vendor
+/node_modules
