@@ -4,3 +4,9 @@ Laravel Market başlangıç
 ```sh
 $ git clone https://github.com/puuble/laravelMarket.git
 ```
+```sh
+$ cd laravelMarket
+```
+```sh
+$ composer install
+```
