@@ -55,7 +55,7 @@ Explain: Looking the `app/Modules/` folder. You will see 3 main folders in this 
 
 Results:
 I choice 0 - Frontend and created successfuly changes. Look at `app/modules/TestModule` folder and subfolders. 
-You will see  `Controllers` `Modules` `Views` sub folders in the `TestModule`.
+You will see  `Controllers` `Models` `Views` sub folders in the `TestModule`.
 
 
 Go to `Controllers` folder check `ActionController`.
@@ -130,4 +130,38 @@ Browser time
 
 ```php
 http://lm.dev/testModule
+```
+### Working Models
+
+Create
+
+```sh
+$ php artisan make:model Modules/Frontend/TestModule/Models/TestModel
+```
+
+Check
+```php
+<?php
+
+namespace App\Modules\Frontend\TestModule\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class TestModel extends Model
+{
+    //
+}
+```
+Use
+```php
+use App\Modules\Frontend\TestModule\Models\TestModel;
+```
+
+```php
+public function index()
+    {
+        //
+        TestModel::class;
+        return view('TestModule::index');
+    }
 ```
