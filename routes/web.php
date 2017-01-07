@@ -25,6 +25,8 @@ Route::get('/', function(){
 Auth::routes();
 
 
+
+
 Route::group(['middleware'=>'auth','prefix'=>'user'],function(){
 
     Route::any('/{modules}/{controller}/{function}/{action}','RouteController@router');
@@ -43,5 +45,7 @@ Route::group(['middleware'=>'admin','prefix'=>'admin'],function(){
     Route::any('/{modules}','RouteController@router');
 
 });
+
+
 
 
