@@ -39,7 +39,7 @@ Now ready to working for modules. We change  branch on TestModule.
 ```sh
 php artisan module:create <module_name>
 ```
-This code custom command (`module:create`) in Laravel Market from app/Console/Commands
+This code custom command (`module:create`) in Laravel Market from `app/Console/Commands`
 This code mean is created new module in LM 
 for example
 ```sh
@@ -56,11 +56,51 @@ Explain: Looking the `app/Modules/` folder. You will see 3 main folders in this 
 Results:
 I choice 0 - Frontend and created successfuly changes. Look at `app/modules/TestModule` folder and subfolders. 
 You will see  `Controllers` `Modules` `Views` sub folders in the `TestModule`.
+
+
 Go to `Controllers` folder check `ActionController`.
 
 
 
+```php
+namespace App\Modules\Frontend\TestModule\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 
+```
 
 
+```php
+  public function index()
+    {
+        //
+        return 'Hello Laravel Market';
+    }
+```
+
+### step 3 Access Modules on Browers
+
+Now! We required config/Module.php.
+
+TestModule write in the frontend area.
+
+```php
+   'Admin' => [], //admin side module lists
+
+    'Frontend' => [
+        'TestModule'
+    ], // frontend side module lists
+
+
+    'User' => [], // user side module lists
+
+```
+
+And .. Check Your Browser
+Example:
+
+```php
+http://lm.dev/testModule
+```
