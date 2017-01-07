@@ -80,9 +80,9 @@ use App\Http\Controllers\Controller;
     }
 ```
 
-### step 3 Access Modules on Browers
+### step 3 Access Modules on Browsers
 
-Now! We required config/Module.php.
+Now! We required `config/Module.php`.
 
 TestModule write in the frontend area.
 
@@ -100,6 +100,33 @@ TestModule write in the frontend area.
 
 And .. Check Your Browser
 Example:
+
+```php
+http://lm.dev/testModule
+```
+### Step 4 Views
+Check `TestModule/Controllers/ActionController`
+```php
+  public function index()
+    {
+        //
+        return 'Hello Laravel Market';
+    }
+```
+Change
+```php
+  public function index()
+    {
+        //
+        return view('testModule::index');
+    }
+```
+And create `index.blade.php` in the `testModule/Views` folder
+
+```php
+  Hello Laravel Market from the Turkey
+```
+Browser time
 
 ```php
 http://lm.dev/testModule
