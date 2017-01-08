@@ -1,20 +1,4 @@
 <?php
-function search($request,$data){
-
-}
-function getOrder($request,$data,$columns){
-    if($request->has('order')){
-        $getColumn = $request->get('order')[0]['column'];
-        $order = $request->get('order')[0]['dir'];
-        if($getColumn == 0){
-            $data = $data->orderBy('DT_RowId',$order);
-        } else {
-            $data = $data->orderBy($columns[$getColumn],$order);
-        }
-
-        return $data;
-    }
-}
 function is_ban($user){
     return $user->is_ban;
 }
@@ -111,10 +95,6 @@ function getGroupScopesWithPermissionUrl($user){
 
         return $data;
     }
-function getDefaultCompany(){
-    return "{brand}-{model}-{row_id}";
-}
-
 
 function getGroupScopesWithPermissionID($user){
 
