@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
     {
 
        
-       
+        \DB::table('applications')->insert(['name'=>'mistin','surname'=>'sulusoglu','age'=>30]);
+        \DB::table('applications')->insert(['name'=>'eren','surname'=>'kartal','age'=>28]);
 
 
     }
