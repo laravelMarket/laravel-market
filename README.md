@@ -118,7 +118,7 @@ Change
   public function index()
     {
         //
-        return view('testModule::index');
+        return view('TestModule::index');
     }
 ```
 And create `index.blade.php` in the `testModule/Views` folder
@@ -169,6 +169,6 @@ public function index()
 
 
 ```sh
-git push -u origin testModule 
+git push -u origin TestModule 
 ```
 And get pull request
