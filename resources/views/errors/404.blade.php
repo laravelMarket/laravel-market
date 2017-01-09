@@ -40,7 +40,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Sayfa YOK</div>
+                <div class="title">404 NOT FOUND</div>
             </div>
         </div>
     </body>
