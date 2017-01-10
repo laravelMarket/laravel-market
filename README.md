@@ -5,7 +5,7 @@ Start Laravel Market
 $ git clone https://github.com/laravelMarket/laravel-market.git
 ```
 ```sh
-$ cd laravelMarket
+$ cd laravel-market
 ```
 ```sh
 $ composer install
