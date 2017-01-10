@@ -1,4 +1,4 @@
-# LaravelMarket
+# LaravelMarket Quick Start
 Start Laravel Market
 ### Install
 ```sh
