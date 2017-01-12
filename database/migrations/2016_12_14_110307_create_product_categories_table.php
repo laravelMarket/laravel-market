@@ -10,6 +10,8 @@ class CreateProductCategoriesTable extends Migration {
 		Schema::create('product_categories', function(Blueprint $table) {
 			$table->bigIncrements('id');
 			$table->string('category_name', 255);
+			$table->string('category_slug', 255);
+			$table->bigInteger('parent')->default(0);
 		});
 	}
 

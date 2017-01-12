@@ -2,6 +2,19 @@
 function is_ban($user){
     return $user->is_ban;
 }
+function getCategories($parent=0){
+
+  return   \App\ProductCategories::where('parent',$parent)->get();
+
+}
+function getMenus(){
+    $menus = DB::table('mega_menus')->get();
+    return $menus;
+}
+function getMenuItems($item_id){
+    $items = DB::table('mega_menu_items')->where('mega_menu_id',$item_id)->get();
+    return $items;
+}
 function getUserStat($stat){
 
     $status = [1=>'User',2=>'Company Admin',3=>'Super Admin'];

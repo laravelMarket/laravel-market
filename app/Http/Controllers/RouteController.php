@@ -22,6 +22,20 @@ class RouteController extends Controller
         $this->moduleLists_users = config('module.User');
     }
 
+    public function category(Request $request){
+        $this->args = func_get_args();
+        array_shift($this->args);
+
+
+        $parameters = [$this->args[0],$this->args[1], $request];
+        $modules = 'Category';
+        $controller = 'action';
+        $function = 'index';
+
+        $modules = "Frontend\\$modules";
+        return  callModules($modules, $controller, $function, $parameters);
+    }
+
 
     public function router(Request $request)
     {

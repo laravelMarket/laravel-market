@@ -4,7 +4,7 @@ return [
     'Admin' => [], //admin side module lists
 
     'Frontend' => [
-        'HelloWorld'
+        'Category'
     ], // frontend side module lists
 
 

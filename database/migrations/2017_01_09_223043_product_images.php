@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class PackagePermissionRelations extends Migration
+class ProductImages extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +14,11 @@ class PackagePermissionRelations extends Migration
     public function up()
     {
         //
-        Schema::create('package_permission_relations', function (Blueprint $table) {
+        Schema::create('product_images', function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('package_id');
-            $table->integer('permission_id');
+            $table->bigInteger('product_id');
+            $table->string('image_name');
+            $table->timestamps();
 
         });
     }
@@ -29,6 +31,6 @@ class PackagePermissionRelations extends Migration
     public function down()
     {
         //
-        Schema::drop('package_permission_relations');
+        Schema::drop('product_images');
     }
 }

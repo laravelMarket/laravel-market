@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class PackageRelations extends Migration
+class ProductCategoriesRelations extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +14,11 @@ class PackageRelations extends Migration
     public function up()
     {
         //
-        Schema::create('package_relations', function (Blueprint $table) {
+
+        Schema::create('product_category_relations', function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('package_id');
-            $table->bigInteger('company_id');
+            $table->bigInteger('product_id');
+            $table->bigInteger('category_id');
 
         });
     }
@@ -29,6 +31,6 @@ class PackageRelations extends Migration
     public function down()
     {
         //
-        Schema::drop('package_relations');
+        Schema::drop('product_category_relations');
     }
 }
