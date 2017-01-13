@@ -1,5 +1,6 @@
 # LaravelMarket Quick Start
 Start Laravel Market
+
 ### Install
 ```sh
 $ git clone https://github.com/laravelMarket/laravel-market.git
