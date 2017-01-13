@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration {
 			$table->integer('length')->default(0);
 			$table->integer('weight')->default(0);
 			$table->enum('weight_type',['LBS','OZ'])->default('LBS');
+			$table->string('short_description')->nullable();
 			$table->text('description')->nullable();
 			$table->timestamps();
 		});

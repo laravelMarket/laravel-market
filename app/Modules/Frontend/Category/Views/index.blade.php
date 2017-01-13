@@ -142,13 +142,13 @@
                             <div class="inner">
                                 <div class="product-left">
                                     <div class="product-thumb">
-                                        <a class="product-img" href="#"><img src="/data/option1/{{$product->image_name}}" alt="Product"></a>
+                                        <a class="product-img" href="{{url(str_slug($product->product_name)).'/p/'.$product->id}}"><img src="/data/option1/{{$product->image_name}}" alt="Product"></a>
                                         <a title="Quick View" href="#" class="btn-quick-view">Quick View</a>
                                     </div>
                                 </div>
                                 <div class="product-right">
                                     <div class="product-name">
-                                        <a href="#">{{$product->product_name}}</a>
+                                        <a href="{{url(str_slug($product->product_name)).'/p/'.$product->id}}">{{$product->product_name}}</a>
                                     </div>
                                     <div class="price-box">
                                         <span class="product-price">${{$product->cost}}</span>

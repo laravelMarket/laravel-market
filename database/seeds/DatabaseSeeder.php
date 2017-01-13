@@ -14,8 +14,6 @@ class DatabaseSeeder extends Seeder
     {
 
        
-        \DB::table('applications')->insert(['name'=>'mistin','surname'=>'sulusoglu','age'=>30]);
-        \DB::table('applications')->insert(['name'=>'eren','surname'=>'kartal','age'=>28]);
 
         $products[] = [
             'product_name'=>'Test Product',
@@ -31,6 +29,7 @@ class DatabaseSeeder extends Seeder
             'height'=>0,
             'weight'=>123,
             'weight_type'=>'LBS',
+            'short_description'=>' description sony product',
             'description'=>' description sony product',
 
         ];
@@ -49,6 +48,7 @@ class DatabaseSeeder extends Seeder
             'height'=>0,
             'weight'=>423,
             'weight_type'=>'LBS',
+            'short_description'=>' description sony product 2',
             'description'=>' description sony product 2',
 
         ];
@@ -68,6 +68,7 @@ class DatabaseSeeder extends Seeder
             'height'=>0,
             'weight'=>523,
             'weight_type'=>'LBS',
+            'short_description'=>' description sony product 3',
             'description'=>' description sony product 3',
 
         ];
@@ -104,6 +105,7 @@ class DatabaseSeeder extends Seeder
             'height'=>0,
             'weight'=>523,
             'weight_type'=>'LBS',
+            'short_description'=>' description sony product 5',
             'description'=>' description sony product 5',
 
         ];

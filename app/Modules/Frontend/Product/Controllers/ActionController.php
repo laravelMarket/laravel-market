@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Modules\Frontend\Category\Controllers;
+namespace App\Modules\Frontend\Product\Controllers;
 
-
-use App\ProductCategories;
-use App\ProductCategoryRelation;
+use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,17 +15,13 @@ class ActionController extends Controller
      */
     public function index()
     {
+        //
+        $id = func_get_arg(1);
+        $product = Product::where('products.id',$id)
+            ->leftJoin('product_images as pi','pi.product_id','=','products.id')
+            ->first();
 
-        $category_id = func_get_arg(1);
-
-        $products = ProductCategoryRelation::where('product_category_relations.category_id',$category_id)
-            ->leftJoin('products as p','p.id','=','product_category_relations.product_id')
-            ->leftJoin('product_images as pi','pi.product_id','=','p.id')
-            ->select('p.*','product_category_relations.category_id','pi.image_name')
-            ->get();
-
-        $category = ProductCategories::where('id',$category_id)->first();
-        return view('Category::index',['products'=>$products,'category_name'=>$category->category_name,'category_id'=>$category->id]);
+        return view('Product::index',['id'=>$id,'product'=>$product]);
     }
 
     /**

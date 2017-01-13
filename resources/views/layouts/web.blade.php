@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="/assets/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/assets/lib/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/assets/lib/owl.carousel/owl.carousel.css" />
     <link rel="stylesheet" type="text/css" href="/assets/lib/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/lib/easyzoom/easyzoom.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/animate.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/global.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
@@ -383,12 +383,13 @@
     </div>
 </footer>
 <!-- ./footer -->
-<a href="" class="scroll_top" title="Scroll to Top" style="display: inline;">Scroll</a>
+<a href="#" class="scroll_top" title="Scroll to Top" style="display: inline;">Scroll</a>
 <script type="text/javascript" src="/assets/lib/jquery/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/assets/lib/jquery.bxslider/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="/assets/lib/owl.carousel/owl.carousel.min.js"></script>
 <script type="text/javascript" src="/assets/lib/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/assets/lib/easyzoom/easyzoom.js"></script>
 <!-- COUNTDOWN -->
 <script type="text/javascript" src="/assets/lib/countdown/jquery.plugin.js"></script>
 <script type="text/javascript" src="/assets/lib/countdown/jquery.countdown.js"></script>

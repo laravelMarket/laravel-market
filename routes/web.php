@@ -24,29 +24,15 @@ Route::get('/', function(){
 
 Auth::routes();
 
+\App\Modules\Frontend\Router::routes();
+\App\Modules\User\Router::routes();
+\App\Modules\Admin\Router::routes();
 
 
 
-Route::group(['middleware'=>'auth','prefix'=>'user'],function(){
-
-    Route::any('/{modules}/{controller}/{function}/{action}','RouteController@router');
-    Route::any('/{modules}/{controller}/{function}','RouteController@router');
-    Route::any('/{modules}/{controller}','RouteController@router');
-    Route::any('/{modules}','RouteController@router');
-
-});
-
-Route::group(['middleware'=>'admin','prefix'=>'admin'],function(){
 
 
-    Route::any('/{modules}/{controller}/{function}/{action}','RouteController@router');
-    Route::any('/{modules}/{controller}/{function}','RouteController@router');
-    Route::any('/{modules}/{controller}','RouteController@router');
-    Route::any('/{modules}','RouteController@router');
 
-});
-
-Route::any('/{title}/c/{id}','RouteController@category');
 
 
 

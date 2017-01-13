@@ -24,6 +24,7 @@ class Product extends Model {
         'height',
         'weight',
         'weight_type',
+        'short_description',
         'description'
     ];
 

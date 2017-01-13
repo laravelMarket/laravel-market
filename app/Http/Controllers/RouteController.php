@@ -22,13 +22,28 @@ class RouteController extends Controller
         $this->moduleLists_users = config('module.User');
     }
 
-    public function category(Request $request){
+    public function Category(Request $request){
         $this->args = func_get_args();
         array_shift($this->args);
 
+        //$key = array_search($category_id,  $this->args);
 
-        $parameters = [$this->args[0],$this->args[1], $request];
+        $parameters = [$this->args,1, $request];
         $modules = 'Category';
+        $controller = 'action';
+        $function = 'index';
+
+        $modules = "Frontend\\$modules";
+        return  callModules($modules, $controller, $function, $parameters);
+    }
+    public function Product(Request $request){
+        $this->args = func_get_args();
+        array_shift($this->args);
+
+        //$key = array_search($category_id,  $this->args);
+
+        $parameters = [$this->args,1, $request];
+        $modules = 'Product';
         $controller = 'action';
         $function = 'index';
 
@@ -37,14 +52,14 @@ class RouteController extends Controller
     }
 
 
-    public function router(Request $request)
+    public function Router(Request $request)
     {
         $this->args_num = func_num_args() - 1;
         $this->args = func_get_args();
         array_shift($this->args);
         $this->prefix = $request->route()->getPrefix();
 
-        $modules = studly_case($this->args[0]);
+        $modules = studly_case(func_get_arg(0));
         $controller = 'action';
         $function = 'index';
 
@@ -160,5 +175,7 @@ class RouteController extends Controller
         $modules = "Frontend\\$modules";
         return [$modules, $controller, $function, $parameters];
     }
+
+
 
 }
