@@ -136,6 +136,7 @@
             </div>
             <div class="category-products">
                 <ul class="products row">
+
                     @foreach($products as $product)
                         <li class="product col-xs-12 col-sm-4 col-md-3">
                         <div class="product-container">

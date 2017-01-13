@@ -5,6 +5,7 @@ namespace App\Modules\Frontend\Category\Controllers;
 
 use App\ProductCategories;
 use App\ProductCategoryRelation;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -19,6 +20,9 @@ class ActionController extends Controller
     {
 
         $category_id = func_get_arg(1);
+        \Cart::destroy();
+
+        \Cart::add(['id'=>1,'name'=>'Test product','qty'=>1,'price'=>9.99]);
 
         $products = ProductCategoryRelation::where('product_category_relations.category_id',$category_id)
             ->leftJoin('products as p','p.id','=','product_category_relations.product_id')
