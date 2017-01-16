@@ -169,60 +169,15 @@
                             <div class="tab-container">
                                 <div id="tab-categories" class="tab-panel active">
                                     <ul class="categories">
+                                        @foreach(getCategories() as $category)
                                         <li>
-                                            <a href="index.html#" title="Perfume &amp; Cologne">
-                                                <span class="text">Perfume &amp; Cologne</span>
-                                                <span class="count">(14)</span>
+                                            <a href="{{$category->category_name}}" title="{{$category->category_name}}">
+                                                <span class="text">{{$category->category_name}}</span>
+
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="index.html#" title="Skincare">
-                                                <span class="text">Skincare</span>
-                                                <span class="count">(19)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="index.html#l" title="Metkup">
-                                                <span class="text">Metkup</span>
-                                                <span class="count">(16)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="index.html#" title="Mobile phone">
-                                                <span class="text">Mobile phone</span>
-                                                <span class="count">(19)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="index.html#" title="Tablet">
-                                                <span class="text">Tablet</span>
-                                                <span class="count">(15)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="index.html#" title="Watch sport">
-                                                <span class="text">Watch sport</span>
-                                                <span class="count">(19)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="index.html#" title="Women's Apparel">
-                                                <span class="text">Women's Apparel</span>
-                                                <span class="count">(17)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="index.html#" title="Men's Apparel">
-                                                <span class="text">Men's Apparel</span>
-                                                <span class="count">(19)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="index.html#">
-                                                <span class="text">Accessories</span>
-                                                <span class="count">(1)</span>
-                                            </a>
-                                        </li>
+                                        @endforeach
+
                                     </ul>
                                 </div>
                                 <div id="tab-guarantee" class="tab-panel">

@@ -1,10 +1,6 @@
 <?php
 
-namespace App\Modules\Frontend\Category\Controllers;
-
-
-use App\ProductCategories;
-use App\ProductCategoryRelation;
+namespace App\Modules\Frontend\Cart\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,18 +14,7 @@ class ActionController extends Controller
      */
     public function index()
     {
-
-        $category_id = func_get_arg(1);
-
-
-        $products = ProductCategoryRelation::where('product_category_relations.category_id',$category_id)
-            ->leftJoin('products as p','p.id','=','product_category_relations.product_id')
-            ->leftJoin('product_images as pi','pi.product_id','=','p.id')
-            ->select('p.*','product_category_relations.category_id','pi.image_name')
-            ->get();
-
-        $category = ProductCategories::where('id',$category_id)->first();
-        return view('Category::index',['products'=>$products,'category_name'=>$category->category_name,'category_id'=>$category->id]);
+        //
     }
 
     /**

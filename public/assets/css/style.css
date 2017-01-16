@@ -608,7 +608,7 @@
 	display: inline-block;
 	position: relative;
 	padding: 1px 15px 1px 50px;
-	min-width: 175px;
+	min-width: 220px;
 }
 .block-category .categories>li>a>.text:before{
 	content: "";
