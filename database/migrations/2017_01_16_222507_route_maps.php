@@ -29,6 +29,6 @@ class RouteMaps extends Migration
     public function down()
     {
         //
-        chema::drop('route_maps');
+        Schema::drop('route_maps');
     }
 }
