@@ -6,6 +6,7 @@ function getRoute($title,$id,$method){
     $m = \DB::table('route_maps')->where('method',$method)->first();
 
     $arr = ['{title}'=>$title,'{id}'=>$id];
+
     return str_replace(array_keys($arr),array_values($arr),$m->route);
 }
 function getCategories($parent=0){

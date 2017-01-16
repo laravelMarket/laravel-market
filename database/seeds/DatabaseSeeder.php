@@ -132,5 +132,16 @@ class DatabaseSeeder extends Seeder
             'route'=>'/computers/c/1',
             'txt'=>'Computers',
         ]);
+
+        DB::table('route_maps')->insert([
+            'route'=>'{title}/c/{id}',
+            'method'=>'category',
+
+        ]);
+        DB::table('route_maps')->insert([
+            'route'=>'{title}/p/{id}',
+            'method'=>'product',
+
+        ]);
     }
 }
