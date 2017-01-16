@@ -50,7 +50,7 @@
                                 <select id="category-select" class="search-category-select">
                                     <option value="0">All Categories</option>
                                     @foreach(getCategories() as $cat)
-                                        <option value="{{$cat->id}}">{{$cat->category_name}}</option>
+                                        <option value="{{$cat['id']}}">{{$cat['category_name']}}</option>
                                     @endforeach
 
                                 </select>

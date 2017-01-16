@@ -22,7 +22,7 @@
                         <div class="filter-value">
                             <ul class="list-category">
                                 @foreach(getCategories($category_id) as $m)
-                                    <li><a href="{{url($m->category_slug.'/c/'.$m->id)}}">{{$m->category_name}}</a></li>
+                                    <li><a href="{{url($m['route'])}}">{{$m['category_name']}}</a></li>
                                 @endforeach
 
                             </ul>

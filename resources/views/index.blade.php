@@ -171,8 +171,8 @@
                                     <ul class="categories">
                                         @foreach(getCategories() as $category)
                                         <li>
-                                            <a href="{{$category->category_name}}" title="{{$category->category_name}}">
-                                                <span class="text">{{$category->category_name}}</span>
+                                            <a href="{{url($category['route'])}}" title="{{$category['category_name']}}">
+                                                <span class="text">{{$category['category_name']}}</span>
 
                                             </a>
                                         </li>

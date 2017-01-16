@@ -6,8 +6,12 @@ class Router
 {
     public static function routes(){
 
+        $maps = \DB::table('route_maps')->get();
 
-        \Route::any('/{title}/c/{id}','RouteController@category')->where('id', '[0-9]+');
-        \Route::any('/{title}/p/{id}','RouteController@product');
+        foreach($maps as $map){
+            \Route::any($map->route,'RouteController@'.$map->method)->where('id', '[0-9]+');
+        }
+
+
     }
 }

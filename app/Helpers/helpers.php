@@ -2,10 +2,20 @@
 function is_ban($user){
     return $user->is_ban;
 }
+function getRoute($title,$id,$method){
+    $m = \DB::table('route_maps')->where('method',$method)->first();
+
+    $arr = ['{title}'=>$title,'{id}'=>$id];
+    return str_replace(array_keys($arr),array_values($arr),$m->route);
+}
 function getCategories($parent=0){
 
-  return   \App\ProductCategories::where('parent',$parent)->get();
+  $categories =    \App\ProductCategories::where('parent',$parent)->get();
+    foreach($categories as $category){
+        $cat[] = ['route'=>getRoute($category->category_slug,$category->id,'category'),'id'=>$category->id,'category_name'=>$category->category_name];
+    }
 
+    return $cat;
 }
 function getMenus(){
     $menus = DB::table('mega_menus')->get();
