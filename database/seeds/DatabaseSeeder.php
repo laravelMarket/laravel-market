@@ -129,7 +129,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('mega_menu_items')->insert([
             'mega_menu_id'=>$menu_id,
-            'route'=>'/computers/c/1',
+            'route'=>'/computers/c/2',
             'txt'=>'Computers',
         ]);
 
