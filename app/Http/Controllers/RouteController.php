@@ -26,9 +26,11 @@ class RouteController extends Controller
         $this->args = func_get_args();
         array_shift($this->args);
 
-        //$key = array_search($category_id,  $this->args);
 
-        $parameters = [$this->args,1, $request];
+        $string = explode('/','{title}/c/{id}');
+        $matches  =array_search('{id}', $string);
+
+        $parameters = [$this->args,func_get_arg($matches), $request];
         $modules = 'Category';
         $controller = 'action';
         $function = 'index';
@@ -40,9 +42,10 @@ class RouteController extends Controller
         $this->args = func_get_args();
         array_shift($this->args);
 
-        //$key = array_search($category_id,  $this->args);
+        $string = explode('/','{title}/c/{id}');
+        $matches  =array_search('{id}', $string);
 
-        $parameters = [$this->args,1, $request];
+        $parameters = [$this->args,func_get_arg($matches), $request];
         $modules = 'Product';
         $controller = 'action';
         $function = 'index';

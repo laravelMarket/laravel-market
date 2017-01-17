@@ -19,8 +19,7 @@ class ActionController extends Controller
     public function index()
     {
 
-        $category_id = func_get_arg(1);
-
+        $category_id = (int) func_get_arg(1);
 
         $products = ProductCategoryRelation::where('product_category_relations.category_id',$category_id)
             ->leftJoin('products as p','p.id','=','product_category_relations.product_id')

@@ -11,8 +11,11 @@ function getRoute($title,$id,$method){
 }
 function getCategories($parent=0){
 
-  $categories =    \App\ProductCategories::where('parent',$parent)->get();
-    foreach($categories as $category){
+  $categories =    \App\ProductCategories::where('parent',$parent);
+    if(!$categories->count()){
+        return $cat[] = [];
+    }
+    foreach($categories->get() as $category){
         $cat[] = ['route'=>getRoute($category->category_slug,$category->id,'category'),'id'=>$category->id,'category_name'=>$category->category_name];
     }
 
